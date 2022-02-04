@@ -1,3 +1,23 @@
-body {
+/* body {
   background: peachpuff;
+  z-index: -1;
+} */
+
+#container {
+  height: 400px;
+  width: 400px;
+  background-color: purple;
+  display: flex;
+  flex-flow: column wrap;
+  /* flex-direction: row;
+  flex-wrap: nowrap; */
+}
+
+.child {
+  height: 100px;
+  width: 100px;
+  background-color: goldenrod;
+  margin: 10px;
+  font-size: 2rem;
+  color: white;
 }
