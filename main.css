@@ -3,22 +3,49 @@
   z-index: -1;
 } */
 
-#container {
-  height: 400px;
-  width: 400px;
+/* #container {
+  height: 800px;
+  width: 900px;
   background-color: purple;
   display: flex;
-  flex-flow: row wrap;
-  /* flex-direction: row;
-  flex-wrap: nowrap; */
-  justify-content: center;
+  flex-flow: column wrap;
+  align-items: start;
+  justify-content: start;
 }
 
 .child {
   height: 100px;
   width: 100px;
   background-color: goldenrod;
-  margin: 10px;
+  border: 10px solid yellow;
   font-size: 2rem;
   color: white;
+} */
+
+
+/* SECTION justify-content property*/
+
+#container {
+  background: peachpuff;
+  height: 900px;
+  width: 800px;
+  display: flex;
+  /* NOTE - with just 'display:flex' applied to the flex container, the default behavior is 'flex-flow: row nowrap;' */
+  flex-flow: column-reverse wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.child {
+  background: goldenrod;
+  height: 100px;
+  width: 100px;
+  border: solid green 5px;
+  color: black;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.second-size {
+  height: 290px;
 }
