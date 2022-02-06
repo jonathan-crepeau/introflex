@@ -1,5 +1,5 @@
 body {
-  background: peachpuff;
+  background: paleturquoise;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -12,15 +12,24 @@ body {
   width: 500px;
   background: white;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: end;
+  align-content: end;
+  row-gap: 15px;
+  column-gap: 50px;
 }
 
 .child {
   height: 50px;
-  width: 50px;
+  width: 45px;
   background: blue;
   color: white;
   font-size: 1.5em;
   text-align: center;
+  border: 5px orchid solid;
+}
+
+.second-size {
+  height: 120px;
 }
