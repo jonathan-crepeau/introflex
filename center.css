@@ -12,24 +12,35 @@ body {
   width: 500px;
   background: white;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  align-items: end;
-  align-content: end;
+  /* align-items: end;
+  align-content: end; */
+
+  /* NOTE - row-gap and column-gap remain fixed no matter the flex-direction. 'row-gap' always impacts horizontal spaces (between top and bottom of a given item), while 'column-gap' always impacts vertical spaces (between sides of items). */
   row-gap: 15px;
-  column-gap: 50px;
+  /* column-gap: 15px; */
 }
 
 .child {
-  height: 50px;
+  height: 40px;
   width: 45px;
   background: blue;
   color: white;
   font-size: 1.5em;
   text-align: center;
   border: 5px orchid solid;
+  flex-grow: 1;
+  flex-basis: auto;
 }
 
+/* 
 .second-size {
   height: 120px;
+  /* flex-shrink: 3;
+} */
+
+#eleven {
+  flex-grow: 5;
+  flex-basis: 70%;
 }
