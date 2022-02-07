@@ -1,51 +1,91 @@
-/* body {
-  background: peachpuff;
-  z-index: -1;
-} */
 
-/* #container {
-  height: 800px;
-  width: 900px;
-  background-color: purple;
+/* SECTION Perfect Centering
+1. This relies on the fact a margin set to auto in a flex container absorb extra space. So setting a margin of auto will make the item perfectly centered in both axes.
+*/
+
+#parent {
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-flow: column wrap;
-  align-items: start;
-  justify-content: start;
 }
 
 .child {
-  height: 100px;
-  width: 100px;
-  background-color: goldenrod;
-  border: 10px solid yellow;
-  font-size: 2rem;
-  color: white;
-} */
-
-
-/* SECTION justify-content property*/
-
-#container {
+  height: 150px;
+  width: 150px;
   background: peachpuff;
-  height: 900px;
-  width: 800px;
+  margin: auto;
   display: flex;
-  /* NOTE - with just 'display:flex' applied to the flex container, the default behavior is 'flex-flow: row nowrap;' */
-  flex-flow: column-reverse wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+
+/* SECTION 
+*/
+
+/* #parent {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
 }
 
 .child {
-  background: goldenrod;
   height: 100px;
   width: 100px;
-  border: solid green 5px;
-  color: black;
-  font-size: 2rem;
-  text-align: center;
+  background: peachpuff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: blue;
+} */
+
+
+
+
+/* SECTION - Adjust to screen sizes with media queries:
+
+2. Let’s try something else. Imagine we have a right-aligned navigation element on the very top of our website, but we want it to be centered on medium-sized screens and single-columned on small devices. Easy enough. */
+
+/* #parent {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
 }
 
-.second-size {
-  height: 290px;
+.child {
+  height: 100px;
+  width: 100px;
+  background: peachpuff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: blue;
+} */
+
+/* NOTE - The 'and' keyword combines a media type (e.g., all/screen) with a media feature, or multiple media features:*/
+
+/* @media all and (max-width: 1000px) {
+  #parent {
+    justify-content: space-around;
+  }
 }
+
+@media all and (max-width: 800px) {
+  #parent {
+    flex-flow: column nowrap;
+  }
+
+  .child {
+    flex-shrink: 0;
+  }
+} */
