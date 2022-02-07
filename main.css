@@ -3,7 +3,7 @@
 1. This relies on the fact a margin set to auto in a flex container absorb extra space. So setting a margin of auto will make the item perfectly centered in both axes.
 */
 
-#parent {
+/* #parent {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -19,36 +19,32 @@
   align-items: center;
   font-size: 2rem;
   font-weight: 900;
-}
+} */
 
 
-/* SECTION 
+/* SECTION Horizontal Positioning WITHOUT Media Queries
+2. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
 */
 
-/* #parent {
+#parent {
   height: 100vh;
   width: 100vw;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
+  justify-content: space-evenly;
 }
 
 .child {
-  height: 100px;
-  width: 100px;
+  height: 99px;
+  width: 99px;
+  border: 1px solid black;
   background: peachpuff;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.25rem;
-  font-weight: 900;
-  color: blue;
-} */
+}
 
 
-
-
-/* SECTION - Adjust to screen sizes with media queries:
+/* SECTION - Adjust Positioning WITH Media Queries
 
 2. Let’s try something else. Imagine we have a right-aligned navigation element on the very top of our website, but we want it to be centered on medium-sized screens and single-columned on small devices. Easy enough. */
 
