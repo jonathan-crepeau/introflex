@@ -26,7 +26,7 @@
 2. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
 */
 
-#parent {
+/* #parent {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -41,12 +41,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 
 /* SECTION - Adjust Positioning WITH Media Queries
 
-2. Let’s try something else. Imagine we have a right-aligned navigation element on the very top of our website, but we want it to be centered on medium-sized screens and single-columned on small devices. Easy enough. */
+3. Let’s try something else. Imagine we have a right-aligned navigation element on the very top of our website, but we want it to be centered on medium-sized screens and single-columned on small devices. Easy enough. */
 
 /* #parent {
   height: 100vh;
@@ -85,3 +85,66 @@
     flex-shrink: 0;
   }
 } */
+
+
+/* SECTION 
+4.  Let’s try something even better by playing with flex items flexibility! What about a mobile-first 3-columns layout with full-width header and footer. And independent from source order.
+*/
+
+/* .wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.wrapper > * {
+  flex: 1 100%;
+}
+
+@media all and (min-width: 600px) {
+  .aside { flex: 1 auto; }
+}
+
+@media all and (min-width: 800px) {
+  .main { flex: 2 0px; }
+  #aside-1 { order: 1; }
+  .main { order: 2; }
+  #aside-2 { order: 3; }
+  .footer { order: 4; }
+} */
+
+
+/* SECTION */
+
+
+#parent {
+  height: 100px;
+  width: 700px;
+  display: flex;
+  flex-direction: row;
+  background: peachpuff;
+  margin: auto;
+}
+
+/* NOTE
+
+*/
+.child {
+
+  /* NOTE - 'flex-basis: auto' needs just one absolute size out of (1)height and (2) width. If 'flex-direction:row', set absolute size width. If 'flex-direction: column', set absolute size height. Whatever dimension does NOT have an absolute side will default to a behavior where it stretches to fill the rest of the container along that directional axis. */
+  /* height: 30px; */
+  /* width: 100px; */
+  border: solid black 1px;
+  background: paleturquoise;
+
+  /* NOTE
+  - The following 'content' property has the same effect as when flex items do not have a specific height & width size set (and it defaults to only providing a flex item large enough to cover the content alone).  */
+  /* flex-basis: auto; */
+  /* flex-grow: 1; */
+
+  /* NOTE 
+  - When the last value (flex-basis) is set to auto, AND the items don't have the set width, they are autosized as if 'width: max-content'.
+  */
+  flex: 1 1 0;
+}
+
+/* Source for above: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax */
